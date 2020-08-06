@@ -19,6 +19,7 @@ Route::get('/','PrincipalController@index')->name('index');
 
 //Rutas Agentes
 Route::get('/agentes','AgentesController@index')->name('agentes');
+Route::post('/agentes','AgentesController@store')->name('store');
 
 //Rutas Ejecutores
 Route::get('/ejecutores','EjecutoresController@index')->name('ejecutores');

@@ -26,7 +26,7 @@
       <!-- CONTENIDO AQUI -->
         <h1>Agregar Agente</h1>
         <br>
-          <form action="" method="">
+          <form method="POST" action="{{route('store')}}">
             @csrf
             <div class="row">
               <div class="col">
@@ -64,9 +64,29 @@
               <div class="col">
                 <label for="exampleInputEmail1">Distrito Asignado</label>
                 <select class="form-control" name="distrit">
+                  <option value="Distrito Adachi">Distrito Adachi</option>
+                  <option value="Distrito Arakawa">Distrito Arakawa</option>
+                  <option value="Distrito Bunkyo">Distrito Bunkyo</option>
+                  <option value="Distrito Chiyoda">Distrito Chiyoda</option>
+                  <option value="Distrito Chūō">Distrito Chūō</option>
+                  <option value="Distrito Edogawa">Distrito Edogawa</option>
+                  <option value="Distrito Itabashi">Distrito Itabashi</option>
+                  <option value="Distrito Katsushika">Distrito Katsushika</option>
+                  <option value="Distrito Kito">Distrito Kito</option>
+                  <option value="Distrito Koto">Distrito Koto</option>
+                  <option value="Distrito Meguro">Distrito Meguro</option>
+                  <option value="Distrito Minato">Distrito Minato</option>
+                  <option value="Distrito Nakano">Distrito Nakano</option>
+                  <option value="Distrito Nerima">Distrito Nerima</option>
+                  <option value="Distrito Ota">Distrito Ota</option>
+                  <option value="Distrito Setagaya">Distrito Setagaya</option>
                   <option value="Distrito Shibuya">Distrito Shibuya</option>
+                  <option value="Distrito Shinagawa">Distrito Shinagawa</option>
                   <option value="Distrito Shinjuku">Distrito Shinjuku</option>
-                  <option value="Distrito Aoyama">Distrito Aoyama</option>
+                  <option value="Distrito Suginami">Distrito Suginami</option>
+                  <option value="Distrito Sumida">Distrito Sumida</option>
+                  <option value="Distrito Toshima">Distrito Toshima</option>
+                  <option value="Distrito Taitō">Distrito Taitō</option>                                              
                 </select>
               </div>
             </div>
@@ -103,26 +123,53 @@
               <th scope="col">Correo</th>
               <th scope="col">Distrito Asignado</th>
               <th scope="col">Codigo Sibyl</th> 
-              <th scope="col">Descripción</th>             
+              <th scope="col">Descripción</th>   
+              <th scope="col">Acciones</th>                          
             </tr>
           </thead>
           <tbody>
+      @foreach($datos as $fila)
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>Elite Class</td>
-              <td>00001</td>
-              <td>sibyl@sibyl.com</td>              
-              <td>Aoyama</td>
-              <td>N/A</td>
-              <td><a class="btn btn-success" href="">Editar</a> <a class="btn btn-danger" href="">Eliminar</a></td>
+              <th scope="row">{{ $fila->id}}</th>
+              <td>{{ $fila->name}}</td>
+              <td>{{ $fila->last_name}}</td>
+              <td>{{ $fila->rank}}</td>
+              <td>{{ $fila->shell}}</td>
+              <td>{{ $fila->email}}</td>              
+              <td>{{ $fila->distrit}}</td>
+              <td>{{ $fila->cod_sibyl}}</td>
+              <td>{{ $fila->description}}</td>              
+              <td><a type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">Editar</a>
+              <a class="btn btn-danger" href="">Eliminar</a></td>
             </tr>
           </tbody>
+        @endforeach
         </table>
       </div> 
   </section>
   <!-- /.content -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
 <!-- /.content-wrapper -->
 

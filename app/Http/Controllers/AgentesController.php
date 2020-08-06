@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Agentes;
 
 class AgentesController extends Controller
 {
@@ -13,7 +14,9 @@ class AgentesController extends Controller
      */
     public function index()
     {
-        return view('agentes');
+        $datos = Agentes::get();
+
+        return view('agentes', compact('datos'));
     }
 
     /**
@@ -35,6 +38,18 @@ class AgentesController extends Controller
     public function store(Request $request)
     {
         //
+        $variable = Agentes::create([
+            'name' => request('name'),
+            'last_name' => request('last_name'),
+            'rank' => request('rank'),
+            'shell' => request('shell'),
+            'email' => request('email'),
+            'distrit' => request('distrit'),
+            'cod_sibyl' => request('cod_sibyl'),
+            'description' => request('description'),            
+        ]);
+
+        return redirect('agentes');        
     }
 
     /**
