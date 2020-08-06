@@ -15,6 +15,14 @@ class CreateEjecutoresTable extends Migration
     {
         Schema::create('ejecutores', function (Blueprint $table) {
             $table->id();
+            $table->text('name');
+            $table->text('last_name');     
+            $table->text('rank');
+            $table->text('shell');     
+            $table->text('email');
+            $table->text('agente');     
+            $table->text('co_criminal');
+            $table->text('description');              
             $table->timestamps();
         });
     }

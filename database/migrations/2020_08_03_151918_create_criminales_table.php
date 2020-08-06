@@ -15,6 +15,13 @@ class CreateCriminalesTable extends Migration
     {
         Schema::create('criminales', function (Blueprint $table) {
             $table->id();
+            $table->text('name');
+            $table->text('last_name');     
+            $table->text('cri_latent');
+            $table->text('leg_status');     
+            $table->text('case_reg');
+            $table->text('cell');     
+            $table->text('description');             
             $table->timestamps();
         });
     }

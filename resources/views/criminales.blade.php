@@ -11,7 +11,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{route('index')}}">Home</a></li>
             <li class="breadcrumb-item active">Criminales</li>
           </ol>
         </div><!-- /.col -->
@@ -27,48 +27,51 @@
       <div>
         <h2>Registrar Criminales</h2>
         <br>
-          <form>
-            <div class="form-row">
+          <form action="" method="">
+            @csrf
+            <div class="row">
               <div class="col">
-                <input type="text" class="form-control" placeholder="First name">
+                <label for="exampleInputEmail1">Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre" name="name">
               </div>
               <div class="col">
-                <input type="text" class="form-control" placeholder="Last name">
+                <label for="exampleInputEmail1">Apellido</label>
+                <input type="text" class="form-control" placeholder="Apellido" name="last_name">
               </div>
             </div>
-          </form>   
-      </div>
-      <br>
-      <div>
-        <h2>Registro de Criminales latentes</h2>
-        <br>
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-              <th scope="col">Last</th>
-              <th scope="col">Acciones</th>              
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Otto</td>
-              <td>@mdo</td>              
-              <td>Otto</td>
-              <td><a class="btn btn-success" href="">Editar</a> <a class="btn btn-danger" href="">Eliminar</a></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>     
+            <br>
+            <div class="row">
+              <div class="col">
+                <label for="exampleInputEmail1">Latencia Criminal</label>
+                <input type="text" class="form-control" placeholder="100" name="cri_latent">
+              </div>
+              <div class="col">
+                <label for="exampleInputEmail1">Estado Legal</label>
+                <input type="text" class="form-control" placeholder="Terrorista, Sedición, Asesino en Serie...." name="leg_status">
+              </div>
+            </div>
+            <br> 
+            <div class="row">
+              <div class="col">
+                <label for="exampleInputEmail1">Número de Caso</label>
+                <input type="email" class="form-control" placeholder="Número de Caso" name="case_reg">
+              </div>
+              <div class="col">
+                <label for="exampleInputEmail1">Celda</label>
+                <input type="email" class="form-control" placeholder="0102" name="cell">
+              </div>
+            </div>
+            <br> 
+            <div class="row">
+              <div class="col">
+                <label for="exampleInputEmail1">Descripción</label>
+                <textarea class="form-control" cols="5" rows="5" placeholder="Descripción" name="description"></textarea>
+              </div>
+            </div>            
+            <br>                                
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>     
+      </div>    
     </div><!-- /.container-fluid -->
   </section>
   <!-- /.content -->

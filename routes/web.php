@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('app.master');
-});
+
+//Ruta INDEX
+Route::get('/','PrincipalController@index')->name('index');
 
 //Rutas Agentes
 Route::get('/agentes','AgentesController@index')->name('agentes');
