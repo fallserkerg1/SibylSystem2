@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Ejecutores;
 
 class EjecutoresController extends Controller
 {
@@ -14,7 +15,9 @@ class EjecutoresController extends Controller
     public function index()
     {
         //
-        return view('ejecutores');
+        $datos = Ejecutores::get();
+
+        return view('ejecutores', compact('datos'));
     }
 
     /**
@@ -35,7 +38,18 @@ class EjecutoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $variable = Ejecutores::create([
+            'name' => request('name'),
+            'last_name' => request('last_name'),
+            'rank' => request('rank'),
+            'shell' => request('shell'),
+            'email' => request('email'),
+            'agente' => request('agente'),
+            'co_criminal' => request('co_criminal'),
+            'description' => request('description'),            
+        ]);
+
+        return redirect('ejecutores');        
     }
 
     /**

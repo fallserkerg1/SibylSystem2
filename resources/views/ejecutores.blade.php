@@ -26,7 +26,7 @@
       <!-- CONTENIDO AQUI -->
         <h1>Agregar Ejecutor</h1>
         <br>
-          <form action="" method="">
+          <form method="POST" action="{{route('ejec_store')}}">
             @csrf
             <div class="row">
               <div class="col">
@@ -91,28 +91,34 @@
         <table class="table">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-              <th scope="col">Last</th>
-              <th scope="col">Acciones</th>              
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Rango</th>
+              <th scope="col">Placa</th>
+              <th scope="col">Correo</th>              
+              <th scope="col">Agente Asignado</th>
+              <th scope="col">Coeficinete Criminal</th>
+              <th scope="col">Descripción</th>     
+              <th scope="col">Acciones</th>                         
             </tr>
           </thead>
           <tbody>
+   @foreach($datos as $fila)         
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Otto</td>
-              <td>@mdo</td>              
-              <td>Otto</td>
+              <td>{{ $fila->id}}</td>
+              <td>{{ $fila->name}}</td>
+              <td>{{ $fila->last_name}}</td>
+              <td>{{ $fila->rank}}</td>
+              <td>{{ $fila->shell}}</td>              
+              <td>{{ $fila->email}}</td>
+              <td>{{ $fila->agente}}</td>              
+              <td>{{ $fila->co_criminal}}</td>
+              <td>{{ $fila->description}}</td>              
               <td><a class="btn btn-success" href="">Editar</a> <a class="btn btn-danger" href="">Eliminar</a></td>
             </tr>
           </tbody>
+  @endforeach
         </table>
       </div> 
   </section>
