@@ -27,3 +27,6 @@ Route::post('/ejecutores','EjecutoresController@store')->name('ejec_store');
 
 //Rutas Criminales
 Route::get('/criminales','CriminalesController@index')->name('criminales');
+
+//Rutas Casos
+Route::get('/casos','CasosController@index')->name('casoos');
