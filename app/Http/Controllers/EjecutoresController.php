@@ -30,6 +30,12 @@ class EjecutoresController extends Controller
         //
     }
 
+    public function asig_ejecutor()
+    {
+        //
+        return view('asig_ejecutor');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -92,8 +98,11 @@ class EjecutoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Ejecutores $fila)
     {
         //
+        $fila->delete();
+
+        return redirect('ejecutores');        
     }
 }

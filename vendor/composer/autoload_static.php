@@ -481,12 +481,17 @@ class ComposerStaticInitc2e24773f97f499a1f72b1e5a7ae19c4
     );
 
     public static $classMap = array (
+        'App\\Agentes' => __DIR__ . '/../..' . '/app/Agentes.php',
+        'App\\Casos' => __DIR__ . '/../..' . '/app/Casos.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Ejecutores' => __DIR__ . '/../..' . '/app/Ejecutores.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AgentesController' => __DIR__ . '/../..' . '/app/Http/Controllers/AgentesController.php',
+        'App\\Http\\Controllers\\CasosController' => __DIR__ . '/../..' . '/app/Http/Controllers/CasosController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\CriminalesController' => __DIR__ . '/../..' . '/app/Http/Controllers/CriminalesController.php',
         'App\\Http\\Controllers\\EjecutoresController' => __DIR__ . '/../..' . '/app/Http/Controllers/EjecutoresController.php',
+        'App\\Http\\Controllers\\PrincipalController' => __DIR__ . '/../..' . '/app/Http/Controllers/PrincipalController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',

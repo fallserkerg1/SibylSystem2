@@ -6,12 +6,17 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Agentes' => $baseDir . '/app/Agentes.php',
+    'App\\Casos' => $baseDir . '/app/Casos.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Ejecutores' => $baseDir . '/app/Ejecutores.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AgentesController' => $baseDir . '/app/Http/Controllers/AgentesController.php',
+    'App\\Http\\Controllers\\CasosController' => $baseDir . '/app/Http/Controllers/CasosController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\CriminalesController' => $baseDir . '/app/Http/Controllers/CriminalesController.php',
     'App\\Http\\Controllers\\EjecutoresController' => $baseDir . '/app/Http/Controllers/EjecutoresController.php',
+    'App\\Http\\Controllers\\PrincipalController' => $baseDir . '/app/Http/Controllers/PrincipalController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',

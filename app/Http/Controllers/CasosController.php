@@ -14,6 +14,7 @@ class CasosController extends Controller
     public function index()
     {
         //
+        return view('casos');
     }
 
     /**
@@ -26,6 +27,11 @@ class CasosController extends Controller
         //
     }
 
+    public function reg_casos()
+    {
+        //
+        return view('reg_casos');
+    }
     /**
      * Store a newly created resource in storage.
      *

@@ -1,6 +1,12 @@
-@extends('app.master')
-@section('content')
-<!-- Content Wrapper. Contains page content -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editar Agente</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <div class="content-header">
@@ -23,26 +29,28 @@
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
+      <div class="container">
+
       <!-- CONTENIDO AQUI -->
-        <h1>Agregar Agente</h1>
+        <h1>Editar Agente</h1>
         <br>
-          <form method="POST" action="{{route('store')}}">
-            @csrf
+          <form method="POST" action="{{ route('update_agente', $fila)}}">
+            @csrf @method('PATCH')
             <div class="row">
               <div class="col">
                 <label for="exampleInputEmail1">Nombre</label>
-                <input type="text" class="form-control" placeholder="Nombre" name="name">
+                <input type="text" class="form-control" name="name" value="{{ $fila->name}}">
               </div>
               <div class="col">
                 <label for="exampleInputEmail1">Apellido</label>
-                <input type="text" class="form-control" placeholder="Apellido" name="last_name">
+                <input type="text" class="form-control" name="last_name" value="{{ $fila->last_name}}">
               </div>
             </div>
             <br>
             <div class="row">
               <div class="col">
                 <label for="exampleInputEmail1">Rango</label>
-                <select class="form-control" name="rank">
+                <select class="form-control" name="rank" value="{{ $fila->rank}}">
                   <option value="Clase Elite">Clase Elite</option>
                   <option value="Clase Especial">Clase Especial</option>
                   <option value="Clase 1">Clase 1</option>
@@ -52,18 +60,18 @@
               </div>
               <div class="col">
                 <label for="exampleInputEmail1">Número de Placa</label>
-                <input type="text" class="form-control" placeholder="000001" name="shell">
+                <input type="text" class="form-control" name="shell" value="{{ $fila->shell}}">
               </div>
             </div>
             <br> 
             <div class="row">
               <div class="col">
                 <label for="exampleInputEmail1">Correo</label>
-                <input type="email" class="form-control" placeholder="Correo" name="email">
+                <input type="email" class="form-control" name="email" value="{{ $fila->email}}">
               </div>
               <div class="col">
                 <label for="exampleInputEmail1">Distrito Asignado</label>
-                <select class="form-control" name="distrit">
+                <select class="form-control" name="distrit" {{ $fila->distrit}}>
                   <option value="Distrito Adachi">Distrito Adachi</option>
                   <option value="Distrito Arakawa">Distrito Arakawa</option>
                   <option value="Distrito Bunkyo">Distrito Bunkyo</option>
@@ -94,66 +102,30 @@
             <div class="row">
               <div class="col-lg-6">
                 <label for="exampleInputEmail1">Código Sibyl</label>
-                <input type="text" class="form-control" placeholder="000001" name="cod_sibyl">
+                <input type="text" class="form-control" name="cod_sibyl" value="{{ $fila->cod_sibyl}}">
               </div>
             </div>  
             <br>
             <div class="row">
               <div class="col">
                 <label for="exampleInputEmail1">Descripción</label>
-                <textarea class="form-control" cols="5" rows="5" placeholder="Descripción" name="description"></textarea>
+                <textarea class="form-control" cols="5" rows="5" name="description" value="{{ $fila->description}}"></textarea>
               </div>
             </div>            
             <br>                                
-            <button type="submit" class="btn btn-primary">Enviar</button>
-          </form>        
-    </div>
-    <br>
-      <div>
-        <h2>Agentes Registrados</h2>
-        <br>
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Apellido</th>
-              <th scope="col">Rango</th>
-              <th scope="col">Número de Placa</th>
-              <th scope="col">Correo</th>
-              <th scope="col">Distrito Asignado</th>
-              <th scope="col">Codigo Sibyl</th> 
-              <th scope="col">Descripción</th>   
-              <th scope="col">Acciones</th>                          
-            </tr>
-          </thead>
-          <tbody>
-      @foreach($datos as $fila)
-            <tr>
-              <th scope="row">{{ $fila->id}}</th>
-              <td>{{ $fila->name}}</td>
-              <td>{{ $fila->last_name}}</td>
-              <td>{{ $fila->rank}}</td>
-              <td>{{ $fila->shell}}</td>
-              <td>{{ $fila->email}}</td>              
-              <td>{{ $fila->distrit}}</td>
-              <td>{{ $fila->cod_sibyl}}</td>
-              <td>{{ $fila->description}}</td>              
-              <td>
-                <a class="btn btn-success" href="{{ route('edit_agente', $fila)}}">Editar</a>
-                <form method="POST" action="{{ route('destroy_data',$fila)}}">
-                  @csrf @method('DELETE')
-                    <button class="btn btn-danger">Eliminar</button>
-                </form>
-            </tr>
-          </tbody>
-        @endforeach
-        </table>
-      </div> 
+            <button type="submit" class="btn btn-success">Editar</button>
+            <a class="btn btn-primary" href="{{route('agentes')}}">Volver</a>
+          </form>  
+          <br>
+          <br>
+      </div>          
+    </div> 
   </section>
   <!-- /.content -->
 
 </div>
 <!-- /.content-wrapper -->
-
-@endsection
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -99,13 +99,7 @@
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ejecutores</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Asignar Ejecutor</p>
-                </a>
-              </li>              
+              </li>             
             </ul>
           </li>
           <li class="nav-item has-treeview">
@@ -130,13 +124,13 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('reg_casos')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Registrar Casos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{route('casos')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Archivos de Casos</p>
                 </a>
@@ -182,10 +176,10 @@
   @yield('content')
 
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    <strong>Desarrollado por <a href="http://adminlte.io">Yoshua Soto</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.5
+      <b>Sibyl System</b> 2.1
     </div>
   </footer>
 

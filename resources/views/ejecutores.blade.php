@@ -115,7 +115,11 @@
               <td>{{ $fila->agente}}</td>              
               <td>{{ $fila->co_criminal}}</td>
               <td>{{ $fila->description}}</td>              
-              <td><a class="btn btn-success" href="">Editar</a> <a class="btn btn-danger" href="">Eliminar</a></td>
+              <td><a class="btn btn-success" href="">Editar</a>                 
+                <form method="POST" action="{{ route('destroy_ejec',$fila)}}">
+                  @csrf @method('DELETE')
+                    <button class="btn btn-danger">Eliminar</button>
+                </form></td>
             </tr>
           </tbody>
   @endforeach

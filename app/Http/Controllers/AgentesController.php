@@ -59,8 +59,9 @@ class AgentesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
         //
+    {
+   
     }
 
     /**
@@ -69,10 +70,14 @@ class AgentesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Agentes $fila)
+        
     {
         //
-    }
+        return view('edit_agente',[
+            'fila' => $fila
+        ]); 
+    }    
 
     /**
      * Update the specified resource in storage.
@@ -81,9 +86,21 @@ class AgentesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Agentes $fila)
     {
         //
+        $fila->update([
+            'name' => request('name'),
+            'last_name' => request('last_name'),
+            'rank' => request('rank'),
+            'shell' => request('shell'),
+            'email' => request('email'),
+            'distrit' => request('distrit'),
+            'cod_sibyl' => request('cod_sibyl'),
+            'description' => request('description'), 
+        ]);
+
+        return redirect('agentes');        
     }
 
     /**
@@ -92,8 +109,11 @@ class AgentesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Agentes $fila)
     {
         //
+        $fila->delete();
+
+        return redirect('agentes');
     }
 }
