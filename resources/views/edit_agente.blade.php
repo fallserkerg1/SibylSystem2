@@ -109,7 +109,7 @@
             <div class="row">
               <div class="col">
                 <label for="exampleInputEmail1">Descripción</label>
-                <textarea class="form-control" cols="5" rows="5" name="description" value="{{ $fila->description}}"></textarea>
+                <input class="form-control" cols="5" rows="5" name="description" value="{{ $fila->description}}">
               </div>
             </div>            
             <br>                                
