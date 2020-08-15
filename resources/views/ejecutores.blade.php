@@ -115,7 +115,7 @@
               <td>{{ $fila->agente}}</td>              
               <td>{{ $fila->co_criminal}}</td>
               <td>{{ $fila->description}}</td>              
-              <td><a class="btn btn-success" href="">Editar</a>                 
+              <td><a class="btn btn-success" href="{{ route('edit_ejec', $fila)}}">Editar</a>                 
                 <form method="POST" action="{{ route('destroy_ejec',$fila)}}">
                   @csrf @method('DELETE')
                     <button class="btn btn-danger">Eliminar</button>

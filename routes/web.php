@@ -27,12 +27,16 @@ Route::delete('agentes/{fila}','AgentesController@destroy')->name('destroy_data'
 //Rutas Ejecutores
 Route::get('/ejecutores','EjecutoresController@index')->name('ejecutores');
 Route::post('/ejecutores','EjecutoresController@store')->name('ejec_store');
+Route::get('/ejecutores/{fila}/editar_ejecutor','EjecutoresController@edit')->name('edit_ejec');
+Route::patch('/ejecutores/{fila}','EjecutoresController@update')->name('update_ejecutor');
 Route::get('/asignar_ejecutor','EjecutoresController@asig_ejecutor')->name('asig_ejecutor');
 Route::delete('ejecutores/{fila}','EjecutoresController@destroy')->name('destroy_ejec');
 
 
 //Rutas Criminales
 Route::get('/criminales','CriminalesController@index')->name('criminales');
+Route::get('/criminales_registro','CriminalesController@registro')->name('registro');
+Route::post('/criminales','CriminalesController@store')->name('crimi_store');
 
 //Rutas Casos
 Route::get('/casos','CasosController@index')->name('casos');

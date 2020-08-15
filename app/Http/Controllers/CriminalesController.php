@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Criminales;
 
 class CriminalesController extends Controller
 {
@@ -22,6 +23,15 @@ class CriminalesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function registro()
+    {
+        //
+        $datos = Criminales::get();
+
+        return view('reg_criminales', compact('datos'));
+    }
+
     public function create()
     {
         //
@@ -36,6 +46,17 @@ class CriminalesController extends Controller
     public function store(Request $request)
     {
         //
+        $variable = Criminales::create([
+            'name' => request('name'),
+            'last_name' => request('last_name'),
+            'cri_latent' => request('cri_latent'),
+            'leg_status' => request('leg_status'),
+            'case_reg' => request('case_reg'),
+            'cell' => request('cell'),
+            'description' => request('description'),            
+        ]);
+
+        return redirect('criminales'); 
     }
 
     /**

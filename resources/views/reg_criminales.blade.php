@@ -30,29 +30,33 @@
         <table class="table">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-              <th scope="col">Last</th>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido</th>
+              <th scope="col">Latencia Criminal</th>
+              <th scope="col">Estado Legal</th>
+              <th scope="col">Número de Caso</th>
+              <th scope="col">Celda</th>
+              <th scope="col">Descripción</th>            
               <th scope="col">Acciones</th>              
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Otto</td>
-              <td>@mdo</td>              
-              <td>Otto</td>
+      @foreach($datos as $fila)
+              <th scope="row">{{$fila->id}}</th>
+              <td>{{$fila->name}}</td>
+              <td>{{$fila->last_name}}</td>
+              <td>{{$fila->cri_latent}}</td>
+              <td>{{$fila->leg_status}}</td>
+              <td>{{$fila->case_reg}}</td>              
+              <td>{{$fila->cell}}</td>
+              <td>{{$fila->description}}</td>
               <td><a class="btn btn-success" href="">Editar</a> <a class="btn btn-danger" href="">Eliminar</a></td>
             </tr>
           </tbody>
         </table>
+      @endforeach
       </div>     
     </div><!-- /.container-fluid -->
   </section>

@@ -75,9 +75,12 @@ class EjecutoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Ejecutores $fila)
     {
-        //
+        // 
+        return view('edit_ejecutor',[
+            'fila' => $fila
+        ]);         
     }
 
     /**
@@ -87,9 +90,22 @@ class EjecutoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Ejecutores $fila)
     {
         //
+        $fila->update([
+            'name' => request('name'),
+            'last_name' => request('last_name'),
+            'rank' => request('rank'),
+            'shell' => request('shell'),
+            'email' => request('email'),
+            'agente' => request('agente'),
+            'co_criminal' => request('co_criminal'),
+            'description' => request('description'),
+        ]);
+
+        return redirect('ejecutores');         
+
     }
 
     /**

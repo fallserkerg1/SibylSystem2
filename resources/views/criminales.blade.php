@@ -27,7 +27,7 @@
       <div>
         <h2>Registrar Criminales</h2>
         <br>
-          <form action="" method="">
+          <form method="POST">
             @csrf
             <div class="row">
               <div class="col">
@@ -54,11 +54,11 @@
             <div class="row">
               <div class="col">
                 <label for="exampleInputEmail1">Número de Caso</label>
-                <input type="email" class="form-control" placeholder="Número de Caso" name="case_reg">
+                <input type="text" class="form-control" placeholder="Número de Caso" name="case_reg">
               </div>
               <div class="col">
                 <label for="exampleInputEmail1">Celda</label>
-                <input type="email" class="form-control" placeholder="0102" name="cell">
+                <input type="text" class="form-control" placeholder="0102" name="cell">
               </div>
             </div>
             <br> 
@@ -70,7 +70,8 @@
             </div>            
             <br>                                
             <button type="submit" class="btn btn-primary">Enviar</button>
-          </form>     
+          </form>   
+          <br>  
       </div>    
     </div><!-- /.container-fluid -->
   </section>
