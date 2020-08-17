@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 //Ruta INDEX
 Route::get('/','PrincipalController@index')->name('index');
@@ -41,3 +44,5 @@ Route::post('/criminales','CriminalesController@store')->name('crimi_store');
 //Rutas Casos
 Route::get('/casos','CasosController@index')->name('casos');
 Route::get('/reg_casos','CasosController@reg_casos')->name('reg_casos');
+
+
