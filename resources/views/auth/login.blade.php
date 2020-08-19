@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+  <style type="text/css">
+    body{
+        background-image: url('https://data.whicdn.com/images/148112002/original.jpg');
+    }
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

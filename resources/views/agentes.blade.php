@@ -131,7 +131,7 @@
               </div>                                       
                 <!-- /.card-body -->
                 <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary">Registrar</button>
                 </div>
               </form>
             </div>
@@ -158,43 +158,48 @@
       <div>
         <h2>Agentes Registrados</h2>
         <br>
-        <table class="table">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Apellido</th>
-              <th scope="col">Rango</th>
-              <th scope="col">Número de Placa</th>
-              <th scope="col">Correo</th>
-              <th scope="col">Distrito Asignado</th>
-              <th scope="col">Codigo Sibyl</th> 
-              <th scope="col">Descripción</th>   
-              <th scope="col">Acciones</th>                          
-            </tr>
-          </thead>
-          <tbody>
-      @foreach($datos as $fila)
-            <tr>
-              <th scope="row">{{ $fila->id}}</th>
-              <td>{{ $fila->name}}</td>
-              <td>{{ $fila->last_name}}</td>
-              <td>{{ $fila->rank}}</td>
-              <td>{{ $fila->shell}}</td>
-              <td>{{ $fila->email}}</td>              
-              <td>{{ $fila->distrit}}</td>
-              <td>{{ $fila->cod_sibyl}}</td>
-              <td>{{ $fila->description}}</td>              
-              <td>
-                <a class="btn btn-success" href="{{ route('edit_agente', $fila)}}">Editar</a>
-                <form method="POST" action="{{ route('destroy_data',$fila)}}">
-                  @csrf @method('DELETE')
-                    <button class="btn btn-danger">Eliminar</button>
-                </form>
-            </tr>
-          </tbody>
-        @endforeach
-        </table>
+
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Rango</th>
+                    <th scope="col">Num. Placa</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Distrito Asignado</th>
+                    <th scope="col">Codigo Sibyl</th> 
+                    <th scope="col">Descripción</th>   
+                    <th scope="col">Acciones</th>  
+                  </tr>
+                  </thead>
+                  <tbody>
+              @foreach($datos as $fila)
+                    <tr>
+                      <td>{{ $fila->name}}</td>
+                      <td>{{ $fila->last_name}}</td>
+                      <td>{{ $fila->rank}}</td>
+                      <td>{{ $fila->shell}}</td>
+                      <td>{{ $fila->email}}</td>              
+                      <td>{{ $fila->distrit}}</td>
+                      <td>{{ $fila->cod_sibyl}}</td>
+                      <td>{{ $fila->description}}</td>              
+                      <td>
+                        <a class="btn btn-success" href="{{ route('edit_agente', $fila)}}">Editar</a>
+                        <form method="POST" action="{{ route('destroy_data',$fila)}}">
+                          @csrf @method('DELETE')
+                            <button class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </tr>
+                  </tbody>
+              @endforeach
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
       </div> 
   </section>
   <!-- /.content -->

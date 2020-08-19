@@ -24,21 +24,30 @@
   <section class="content">
     <div class="container-fluid">
       <!-- CONTENIDO AQUI -->
-        <h1>Agregar Ejecutor</h1>
-        <br>
-          <form method="POST" action="{{route('ejec_store')}}">
-            @csrf
-            <div class="row">
-              <div class="col">
-                <label for="exampleInputEmail1">Nombre</label>
-                <input type="text" class="form-control" placeholder="Nombre" name="name">
+
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Agregar Agente</h3>
               </div>
-              <div class="col">
-                <label for="exampleInputEmail1">Apellido</label>
-                <input type="text" class="form-control" placeholder="Apellido" name="last_name">
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form method="POST" action="{{route('store')}}">
+                @csrf
+            <div class="card-body">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col">
+                    <label for="exampleInputEmail1">Nombre</label>
+                    <input type="text" class="form-control" placeholder="Nombre" name="name">
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Apellido</label>
+                      <input type="text" class="form-control" placeholder="Apellido" name="last_name">
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <br>
             <div class="row">
               <div class="col">
                 <label for="exampleInputEmail1">Rango</label>
@@ -79,10 +88,15 @@
                 <label for="exampleInputEmail1">Descripción</label>
                 <textarea class="form-control" cols="5" rows="5" placeholder="Descripción" name="description"></textarea>
               </div>
-            </div>            
-            <br>                                
-            <button type="submit" class="btn btn-primary">Enviar</button>
-          </form>          
+            </div> 
+
+              </div>                                       
+                <!-- /.card-body -->
+                <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+                </div>
+              </form>
+            </div>        
     </div>
     <br>
       <div>
