@@ -24,13 +24,10 @@
   <section class="content">
     <div class="container-fluid">
       <!-- CONTENIDO AQUI -->
-      <div>
-        <h2>Registro de Criminales latentes</h2>
-        <br>
-        <table class="table">
+      <div class="card-body">
+        <table id="example2" class="table table-bordered table-hover">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">ID</th>
               <th scope="col">Nombre</th>
               <th scope="col">Apellido</th>
               <th scope="col">Latencia Criminal</th>
@@ -38,25 +35,29 @@
               <th scope="col">Número de Caso</th>
               <th scope="col">Celda</th>
               <th scope="col">Descripción</th>            
-              <th scope="col">Acciones</th>              
+              <th scope="col">Acciones</th>                         
             </tr>
           </thead>
           <tbody>
+   @foreach($datos as $fila)         
             <tr>
-      @foreach($datos as $fila)
-              <th scope="row">{{$fila->id}}</th>
               <td>{{$fila->name}}</td>
               <td>{{$fila->last_name}}</td>
               <td>{{$fila->cri_latent}}</td>
               <td>{{$fila->leg_status}}</td>
               <td>{{$fila->case_reg}}</td>              
               <td>{{$fila->cell}}</td>
-              <td>{{$fila->description}}</td>
-              <td><a class="btn btn-success" href="">Editar</a> <a class="btn btn-danger" href="">Eliminar</a></td>
+              <td>{{$fila->description}}</td>             
+              <td><a class="btn btn-success" href="">Editar</a>                 
+                <form method="POST" action="">
+                  @csrf @method('DELETE')
+                    <button class="btn btn-danger">Eliminar</button>
+                </form></td>
             </tr>
           </tbody>
+  @endforeach
         </table>
-      @endforeach
+      </div>
       </div>     
     </div><!-- /.container-fluid -->
   </section>

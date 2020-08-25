@@ -24,11 +24,14 @@
   <section class="content">
     <div class="container-fluid">
       <!-- CONTENIDO AQUI -->
-      <div>
-        <h2>Registrar Criminales</h2>
-        <br>
-          <form method="POST">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Registrar Criminal</h3>
+              </div>
+          <form method="POST" action="{{route('crimi_store')}}">
             @csrf
+        <div class="card-body">
+          <div class="form-group">
             <div class="row">
               <div class="col">
                 <label for="exampleInputEmail1">Nombre</label>
@@ -71,8 +74,11 @@
             <br>                                
             <button type="submit" class="btn btn-primary">Enviar</button>
           </form>   
-          <br>  
-      </div>    
+          <br>
+         </div>  
+        </div>   
+      </div> 
+    </div>   
     </div><!-- /.container-fluid -->
   </section>
   <!-- /.content -->

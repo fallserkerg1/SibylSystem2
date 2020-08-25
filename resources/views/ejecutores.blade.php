@@ -31,7 +31,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="{{route('store')}}">
+              <form method="POST" action="{{route('ejec_store')}}">
                 @csrf
             <div class="card-body">
               <div class="form-group">
@@ -102,10 +102,10 @@
       <div>
         <h2>Ejecutores Registrados</h2>
         <br>
-        <table class="table">
+      <div class="card-body">
+        <table id="example2" class="table table-bordered table-hover">
           <thead class="thead-dark">
             <tr>
-              <th scope="col">ID</th>
               <th scope="col">Nombre</th>
               <th scope="col">Apellido</th>
               <th scope="col">Rango</th>
@@ -120,7 +120,6 @@
           <tbody>
    @foreach($datos as $fila)         
             <tr>
-              <td>{{ $fila->id}}</td>
               <td>{{ $fila->name}}</td>
               <td>{{ $fila->last_name}}</td>
               <td>{{ $fila->rank}}</td>
@@ -138,6 +137,7 @@
           </tbody>
   @endforeach
         </table>
+      </div>
       </div> 
   </section>
   <!-- /.content -->
