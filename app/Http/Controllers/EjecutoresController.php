@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Ejecutores;
+use Session;
 
 class EjecutoresController extends Controller
 {
@@ -54,7 +55,7 @@ class EjecutoresController extends Controller
             'co_criminal' => request('co_criminal'),
             'description' => request('description'),            
         ]);
-
+        Session::flash('save','Ejecutor agregado Correctamente');
         return redirect('ejecutores');        
     }
 
@@ -103,7 +104,7 @@ class EjecutoresController extends Controller
             'co_criminal' => request('co_criminal'),
             'description' => request('description'),
         ]);
-
+        Session::flash('update','Ejecutor editado Correctamente');
         return redirect('ejecutores');         
 
     }
@@ -118,7 +119,7 @@ class EjecutoresController extends Controller
     {
         //
         $fila->delete();
-
+        Session::flash('delete','Ejecutor eliminado Correctamente');
         return redirect('ejecutores');        
     }
 }

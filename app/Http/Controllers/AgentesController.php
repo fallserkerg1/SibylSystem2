@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Agentes;
+use Session;
 
 class AgentesController extends Controller
 {
@@ -48,7 +49,7 @@ class AgentesController extends Controller
             'cod_sibyl' => request('cod_sibyl'),
             'description' => request('description'),            
         ]);
-
+        Session::flash('save','Agente Registrado Correctamente');
         return redirect('agentes');        
     }
 
@@ -99,7 +100,7 @@ class AgentesController extends Controller
             'cod_sibyl' => request('cod_sibyl'),
             'description' => request('description'), 
         ]);
-
+        Session::flash('update','Agente Editado Correctamente');
         return redirect('agentes');        
     }
 
@@ -113,7 +114,7 @@ class AgentesController extends Controller
     {
         //
         $fila->delete();
-
+        Session::flash('delete','Agente Eliminado Correctamente');
         return redirect('agentes');
     }
 }

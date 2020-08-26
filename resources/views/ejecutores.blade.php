@@ -20,6 +20,8 @@
   </div>
   <!-- /.content-header -->
 
+@include('message.message_ejec')
+
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">

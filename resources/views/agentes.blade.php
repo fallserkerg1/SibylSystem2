@@ -20,6 +20,7 @@
   </div>
   <!-- /.content-header -->
 
+@include('message.message')
 
     <!-- Main content -->
     <section class="content">
